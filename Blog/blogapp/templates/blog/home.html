@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	{%if title%}
+		<title>Djang log - {{ title }}</title>
+	{% else %}
+		<title>Django Blog Home</title>
+	{% endif%}
+</head>
+<body> -->
+		
+			{% block content%}
+				{% for post in posts%}
+				<article class="media content-section">
+					  <div class="media-body">
+					    <div class="article-metadata">
+					      <a class="mr-2" href="#">{{ post.author }}</a>
+					      <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+					    </div>
+					    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+					    <p class="article-content">{{ post.content }}</p>
+					  </div>
+				</article>
+				{%	endfor %}
+			{% endblock content %}
+
+
+<!-- </body>
+</html> -->
